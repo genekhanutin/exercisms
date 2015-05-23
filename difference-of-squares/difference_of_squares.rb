@@ -1,22 +1,22 @@
 class Squares
   def initialize(number)
-    @number = number      # => 5
-  end                     # => :initialize
+    @number = number
+  end
 
   def square_of_sums
-    sum = (0..@number).to_a.reduce(0, :+)  # => 15
-    sum ** 2                               # => 225
-  end                                      # => :square_of_sums
-end                                        # => :square_of_sums
+    sum = (0..@number).to_a.reduce(0, :+)
+    sum ** 2
+  end
 
-1+2+3+4+5  # => 15
-15**2      # => 225
-
-square = Squares.new(5)  # => #<Squares:0x007fb6ea007ed8 @number=5>
-
-square.square_of_sums  # => 225
+  def sum_of_squares
+    (0..@number).to_a.reduce(0) {|total, number| total + (number ** 2)}
+  end
+end
 
 
+1**2 + 2**2 + 3**2 + 4**2 + 5**2
+
+# SQUARE OF SUMS
 # start with counter at 0
 # iterate from 0 to number
 # for each iteration add number to counter
